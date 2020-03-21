@@ -60,6 +60,15 @@ Se define de esa manera debido al teorema de Gilvenko-Cantelli, que nos dice que
 \frametitle{Prueba de Kolgomorov-Smirnov}
 Para calcular $D_n$ solo es necesario conocer las observaciones $X_1,X_2,...,X_n$, si $X_{\{i\}}$ es el i-ésimo estadístico de orden, se puede probar que $$D_n =\max_{1\le i\le n}max(\frac{i}{n}-F_0(X_{\{i\}}),F_0(X_{\{i\}})-\frac{i-1}{n})$$
 \end{frame}
+\begin{frame}
+\frametitle{Prueba de Kolgomorov-Smirnov}
+Con el siguiente resultado encontraremos la distribución asintótica de $D_n$
+\begin{block}{Teorema 1}
+Sea $X_1,X_2,...,X_n\sim F_0$ y sea $D_n=\sup_{t}|F_0(t)-\hat{F}_n(t)|$ entonces, suponiendo que $F_0$ es continua; $$\sqrt{n}D_n \rightarrow \sup_{0\le t\le 1}|B(t)|\quad \text{en distribución}$$
+Donde $B(t)$ es un puente Browniano.
+\end{block}
+\end{frame}
+
 
 \begin{frame}
 \frametitle{Prueba de Cramér-von Mises}
@@ -73,6 +82,19 @@ De forma analoga a el estadístico $D_n$, $C_n$ se puede escribir en función de
 $$C_n=\frac{1}{12n}+\sum_{i=1}^{n}\left(F_0(X_{\{i\}})-\frac{2i-1}{n}\right)$$ 
 \end{frame}
 \begin{frame}
+\frametitle{Prueba de Cramér-von Mises}
+Con el siguiente resultado encontraremos la distribución asintótica de $C_n$
+\begin{block}{Teorema 2}
+Sea $X_1,X_2,...,X_n\sim F_0$ y sea $C_n=\int(F_0(t)-\hat{F}_n(t))^2dF_0(t)$ entonces, suponiendo que $F_0$ es continua; $$nC_n \rightarrow \int_0^1B^2(t)dt\quad \text{en distribución}$$
+Donde $B(t)$ es un puente Browniano.
+\end{block}
+\end{frame}
+
+
+
+
+
+\begin{frame}
 \frametitle{Prueba de Anderson-Darling}
 \section{Prueba de Anderson-Darling}
 La idea es tambien medir el área en que separa $\hat{F}_n$ de $F_0$, sin embargo, el termino $F_0(t)(1-F_0(t))$ busca tener una mayor ponderación en la región donde la distribución $F_0(t)$ tiene mayor incertidumbre. El estadistico se define como 
@@ -83,4 +105,15 @@ $$A_n=\int\frac{(\hat{F}_n(t)-F_0(t))^2}{F_0(t)(1-F_0(t))}dF_0(t)$$
 De forma analoga a los estadísticos anteriores $A_n$ se puede escribir como:
 $$A_n=-n-\frac{1}{n}\left[\sum_{i=1}^{n}(2i-1)(\log F_0(X_{\{i\}})+\log(1-F_0(X_{\{n-i+1\}}))\right]$$
 \end{frame}
+\begin{frame}
+\frametitle{Prueba de Anderson-Darling}
+Con el siguiente resultado encontraremos la distribución asintótica de $A_n$
+\begin{block}{Teorema 3}
+Sea $X_1,X_2,...,X_n\sim F_0$ y sea $A_n=\int\frac{(\hat{F}_n(t)-F_0(t))^2}{F_0(t)(1-F_0(t))}dF_0(t)$ entonces, suponiendo que $F_0$ es continua; $$nA_n \rightarrow \int_0^1\frac{B^2(t)}{t(1-t)}dt\quad \text{en distribución}$$
+Donde $B(t)$ es un puente Browniano.
+\end{block}
+\end{frame}
+
+
+
 \end{document}
