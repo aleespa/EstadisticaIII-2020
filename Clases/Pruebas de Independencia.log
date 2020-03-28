@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.2.23)  27 MAR 2020 18:26
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.2.23)  27 MAR 2020 20:49
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**21032020.tex
-(./21032020.tex
+**"Pruebas de Independencia.tex"
+(./Pruebas de Independencia.tex
 LaTeX2e <2018-12-01>
 (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamer.cls
 Document Class: beamer 2018/12/02 v3.55 A class for typesetting presentations
@@ -654,8 +654,8 @@ Package: inputenc 2018/08/11 v1.3c Input encoding file
 (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerthemePittsburgh.sty
 (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerinnerthemecircles.sty))
 (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamercolorthemebeaver.sty)
-(./21032020.aux)
-\openout1 = `21032020.aux'.
+(./Pruebas de Independencia.aux)
+\openout1 = `"Pruebas de Independencia.aux"'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 11.
 LaTeX Font Info:    ... okay on input line 11.
@@ -752,9 +752,9 @@ LaTeX Info: Redefining \ref on input line 11.
 LaTeX Info: Redefining \pageref on input line 11.
 LaTeX Info: Redefining \nameref on input line 11.
 
-(./21032020.out) (./21032020.out)
+(./Pruebas de Independencia.out) (./Pruebas de Independencia.out)
 \@outlinefile=\write5
-\openout5 = `21032020.out'.
+\openout5 = `"Pruebas de Independencia.out"'.
 
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
 (Font)                  OT1/cmr/m/n --> OT1/cmss/m/n on input line 11.
@@ -856,9 +856,10 @@ Dictionary: translator-theorem-dictionary, Language: English
 (/usr/share/texlive/texmf-dist/tex/latex/translator/translator-theorem-dictiona
 ry-Spanish.dict
 Dictionary: translator-theorem-dictionary, Language: Spanish 
-) (./21032020.nav) [1
+) (./Pruebas de Independencia.nav) [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] (./21032020.toc) [2
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] (./Pruebas de Independenci
+a.toc) [2
 
 ]
 LaTeX Font Info:    Try loading font information for U+msa on input line 28.
@@ -890,53 +891,33 @@ thkerncmss.
 
 ] [8
 
-] [9
-
-] [10
-
-] [11
-
-] [12
-
-] [13
-
-] [14
-
-] [15
-
-] [16
-
-] [17
-
-] [18
-
 ]
 \tf@nav=\write6
-\openout6 = `21032020.nav'.
+\openout6 = `"Pruebas de Independencia.nav"'.
 
 \tf@toc=\write7
-\openout7 = `21032020.toc'.
+\openout7 = `"Pruebas de Independencia.toc"'.
 
 \tf@snm=\write8
-\openout8 = `21032020.snm'.
+\openout8 = `"Pruebas de Independencia.snm"'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 155.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 155.
-
-(./21032020.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 155.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 155.
-Package rerunfilecheck Info: File `21032020.out' has not changed.
-(rerunfilecheck)             Checksum: 18262128245D0FF0E2C7DC354C549D7D;294.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 74.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 74.
+ (./Pruebas de Independencia.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 74.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 74.
+Package rerunfilecheck Info: File `"Pruebas de Independencia".out' has not chan
+ged.
+(rerunfilecheck)             Checksum: FB8D4D1ED53EF00FB5929949332026E7;155.
  ) 
 Here is how much of TeX's memory you used:
- 17623 strings out of 492609
- 336915 string characters out of 6131462
- 414425 words of memory out of 5000000
- 21091 multiletter control sequences out of 15000+600000
- 11358 words of font info for 41 fonts, out of 8000000 for 9000
+ 17525 strings out of 492609
+ 335473 string characters out of 6131462
+ 410485 words of memory out of 5000000
+ 21016 multiletter control sequences out of 15000+600000
+ 10695 words of font info for 39 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 56i,14n,55p,802b,574s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 56i,14n,55p,820b,574s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texli
@@ -948,10 +929,10 @@ t/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/share/texlive/texmf-dist/fonts
 ic/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams
 fonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/s
 ymbols/msbm10.pfb>
-Output written on 21032020.pdf (18 pages, 134891 bytes).
+Output written on "Pruebas de Independencia.pdf" (8 pages, 106060 bytes).
 PDF statistics:
- 557 PDF objects out of 1000 (max. 8388607)
- 514 compressed objects within 6 object streams
- 42 named destinations out of 1000 (max. 500000)
- 83 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 286 PDF objects out of 1000 (max. 8388607)
+ 256 compressed objects within 3 object streams
+ 20 named destinations out of 1000 (max. 500000)
+ 67 words of extra memory for PDF output out of 10000 (max. 10000000)
 
