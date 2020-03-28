@@ -69,6 +69,16 @@ Donde $B(t)$ es un puente Browniano.
 \end{block}
 \end{frame}
 
+\begin{frame}
+\frametitle{Prueba de Kolgomorov-Smirnov}
+Afortunadamente, se puede desarrollar la distribución del puente browniano. 
+\begin{block}{Proposición 1}
+Bajo la hipótesis $H_0$ entonces 
+$$\lim_{n}\mathbb{P}(\sqrt{n}D_n \le \lambda) =1-2\sum_{j=1}^{\infty}(-1)^{j-1}e^{-2j^2\lambda^2}$$
+\end{block}
+Con está distribución podemos calcular cuantiles y derivar regiones de rechazo.
+\end{frame}
+
 
 \begin{frame}
 \frametitle{Prueba de Cramér-von Mises}
@@ -79,7 +89,7 @@ $$C_n=\int(F_0(t)-\hat{F}_n(t))^2dF_0(t)$$
 \begin{frame}
 \frametitle{Prueba de Cramér-von Mises}
 De forma analoga a el estadístico $D_n$, $C_n$ se puede escribir en función de los estadísticos de orden: 
-$$C_n=\frac{1}{12n}+\sum_{i=1}^{n}\left(F_0(X_{\{i\}})-\frac{2i-1}{n}\right)$$ 
+$$C_n=\frac{1}{12n}+\sum_{i=1}^{n}\left(F_0(X_{\{i\}})-\frac{2i-1}{2n}\right)^2$$ 
 \end{frame}
 \begin{frame}
 \frametitle{Prueba de Cramér-von Mises}
@@ -89,6 +99,17 @@ Sea $X_1,X_2,...,X_n\sim F_0$ y sea $C_n=\int(F_0(t)-\hat{F}_n(t))^2dF_0(t)$ ent
 Donde $B(t)$ es un puente Browniano.
 \end{block}
 \end{frame}
+
+\begin{frame}
+\frametitle{Prueba de Cramér-von Mises}
+De forma similar que con $D_n$ se puede calcular la distribución asintótica de $C_n$
+\begin{block}{Proposición 2}
+Bajo la hipótesis $H_0$ entonces 
+$$ \lim_{n}\mathbb{P}(n C_n > \lambda)=\frac{1}{\pi}\sum_{j=1}^{\infty}(-1)^{j+1}\int_{(2j-1)^2\pi^2}^{4j^2\pi^2}\sqrt{\frac{-\sqrt{y}}{\sin(\sqrt{y})}}\frac{e^{-\frac{xy}{2}}}{y}dy$$
+\end{block}
+De igual forma podemos crear regiones de rechazo con esta distribución.
+\end{frame}
+
 
 
 
@@ -114,6 +135,21 @@ Donde $B(t)$ es un puente Browniano.
 \end{block}
 \end{frame}
 
+\begin{frame}
+\frametitle{Pruebas de 2 Muestras}
+\section{Pruebas de 2 Muestras}
+Supongamos que tenemos dos muestras independientes, $X_1,X_2,...,X_n\sim F_0$ y $Y_1,Y_2,...,Y_m\sim F$, entonces para comparar las 2 muestras hacemos la prueba de hipótesis $H_0: F=F_0$, para construir la prueba usamos $F_m$, $G_m$ la función de distribución empírica de $X_i$ y $Y_i$ respectivamente. De forma análoga a lo desarrollado para las prebas de una muestra, necesitamos una forma de comparar ambas distribuciones. Para ello usamos el estadístico: 
+$$D_{n,m} = \sup_{0\le t\le 1}|F_n(t)-G_m(t)|$$
 
+\end{frame}
 
+\begin{frame}
+\frametitle{Pruebas de 2 Muestras}
+La distribución límite de $D_{n,m}$ es la siguiente:
+\begin{block}{Teorema 4}
+Sea $X_1,X_2,...,X_n\sim F_0$ y $Y_1,Y_2,...,Y_m\sim F$ donde $F_0$ y $F$ son distribuciones continuas. Bajo la hipotesis $H_0: F=F_0$:
+$$ \lim_{n,m} \mathbb{P}(\sqrt{\frac{nm}{n+m}}D_{n,m} \le \lambda) = 1-2\sum_{j=1}^{\infty}(-1)^{j-1}e^{-2j^2\lambda^2}$$
+dado que para algún $0<\gamma <1$, $\frac{m}{n+m}\rightarrow \gamma$
+\end{block}
+\end{frame}
 \end{document}

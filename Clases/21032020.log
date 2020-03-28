@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.2.23)  21 MAR 2020 09:44
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.2.23)  27 MAR 2020 18:26
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -902,6 +902,14 @@ thkerncmss.
 
 ] [14
 
+] [15
+
+] [16
+
+] [17
+
+] [18
+
 ]
 \tf@nav=\write6
 \openout6 = `21032020.nav'.
@@ -912,19 +920,20 @@ thkerncmss.
 \tf@snm=\write8
 \openout8 = `21032020.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 119.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 119.
- (./21032020.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 119.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 119.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 155.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 155.
+
+(./21032020.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 155.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 155.
 Package rerunfilecheck Info: File `21032020.out' has not changed.
-(rerunfilecheck)             Checksum: 92D493088C341210B7627B4C9E9F130B;238.
+(rerunfilecheck)             Checksum: 18262128245D0FF0E2C7DC354C549D7D;294.
  ) 
 Here is how much of TeX's memory you used:
- 17601 strings out of 492609
- 336721 string characters out of 6131462
+ 17623 strings out of 492609
+ 336915 string characters out of 6131462
  414425 words of memory out of 5000000
- 21078 multiletter control sequences out of 15000+600000
+ 21091 multiletter control sequences out of 15000+600000
  11358 words of font info for 41 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  56i,14n,55p,802b,574s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -937,11 +946,12 @@ t/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/share/texlive/texmf-dist/fonts
 /type1/public/amsfonts/cm/cmssi10.pfb></usr/share/texlive/texmf-dist/fonts/type
 1/public/amsfonts/cm/cmssi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
 ic/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams
-fonts/cm/cmsy8.pfb>
-Output written on 21032020.pdf (14 pages, 120484 bytes).
+fonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/s
+ymbols/msbm10.pfb>
+Output written on 21032020.pdf (18 pages, 134891 bytes).
 PDF statistics:
- 444 PDF objects out of 1000 (max. 8388607)
- 407 compressed objects within 5 object streams
- 33 named destinations out of 1000 (max. 500000)
- 75 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 557 PDF objects out of 1000 (max. 8388607)
+ 514 compressed objects within 6 object streams
+ 42 named destinations out of 1000 (max. 500000)
+ 83 words of extra memory for PDF output out of 10000 (max. 10000000)
 
