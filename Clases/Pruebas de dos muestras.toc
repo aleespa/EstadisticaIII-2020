@@ -1,0 +1,4 @@
+\beamer@sectionintoc {1}{Pruebas de 1 muestra}{3}{0}{1}
+\beamer@sectionintoc {2}{Prueba de Wilcoxon - Rangos signados}{4}{0}{2}
+\beamer@sectionintoc {3}{Pruebas de 2 muestras}{8}{0}{3}
+\beamer@sectionintoc {4}{Prueba de Mann-Whitney-Wilcoxon}{9}{0}{4}

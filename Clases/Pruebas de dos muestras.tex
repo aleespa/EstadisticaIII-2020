@@ -1,0 +1,101 @@
+\documentclass[aspectratio=169,spanish]{beamer}
+\usepackage[utf8]{inputenc}
+\title{Estadística III}
+\subtitle{Pruebas de 1 y 2 muestras}
+\author{Alejandro López Hernández}
+\institute{FES Acatlán - UNAM}
+\date{\today}
+\usetheme{Pittsburgh}
+\usecolortheme{beaver}
+
+\begin{document}
+
+\frame{\titlepage}
+\begin{frame}
+\frametitle{Índice}
+\tableofcontents
+\end{frame}
+
+\begin{frame}
+\frametitle{Pruebas de 1 muestra}
+\section{Pruebas de 1 muestra}
+Las pruebas de 1 una muestra consiste en tener una población a la cual queremos comparar en dos instacias distintas, por ejemplo, cuando se aplica cierto tratamiento y se quiere medir el impacto de tal tratamiento. Asumiremos que tenemos $2n$ datos tales que $Z_i=X_i-Y_i$ son independientes, tambien asumiremos que $Z_i$ tienen la misma distribución la cual tiene media $\theta$, este parmetro será el de nuestro interes. 
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Prueba de Wilcoxon - Rangos signados}
+\section{Prueba de Wilcoxon - Rangos signados}
+Está prueba sirve para probar la hipotesis $H_0:\theta =0$, para probar esa hipotesis se costruye el estadístico $T^{+}$ con los rangos de los valores de $|Z_i|$, se define el estadístico como $$ T^{+}=\sum_{i=1}^{n}R_i\varphi_i$$
+donde $\varphi_i$ vale 1 cuando $|Z_i|>0$ y 0 cuando $|Z_i|<0$.
+\end{frame}
+\begin{frame}
+\frametitle{Prueba de Wilcoxon - Rangos signados}
+Se pueden realizar 3 pruebas:
+\begin{itemize}
+\item Prueba de la cola superior, $H_0:\theta=0$ vs $H_1:\theta>0$, $H_0$ se debe rechazar con una significancia de $\alpha$ si $T^{+}\ge t_\alpha$.
+\item Prueba de la cola inferior, $H_0:\theta=0$ vs $H_1:\theta<0$, $H_0$ se debe rechazar con una significancia de $\alpha$ si $T^{+}\le \frac{n(n+1)}{2} -t_\alpha$.
+\item Prueba de dos colas, $H_0:\theta=0$ vs $H_1:\theta=0$, $H_0$ se debe rechazar con una significancia de $\alpha$ si $T^{+}\ge t_{\alpha/2}$ o $T^{+}\le \frac{n(n+1)}{2} -t_{\alpha/2}$
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Prueba de Wilcoxon - Rangos signados}
+Se puede realizar una modificación en el estadístico para poder comparlo contra los cuantiles de la normal, esto debido a que $\mathbb{E}_0(T^{+})=\frac{n(n+1)}{4}$ y que $\text{Var}(T^{+})_0=\frac{n(n+1)(2n+1)}{12}$, por lo tanto podemos construir el esadístico 
+$$T^{*}=\frac{T^{+}-\frac{n(n+1)}{4}}{\left(\frac{n(n+1)(2n+1)}{12}\right)^{1/2}}$$
+\end{frame}
+
+\begin{frame}
+Con $T^{*}$ las pruebas quedan como:
+\begin{itemize}
+\item Prueba de la cola superior, $H_0:\theta=0$ vs $H_1:\theta>0$, $H_0$ se debe rechazar con una significancia de $\alpha$ si $T^{*}\ge z_\alpha$.
+\item Prueba de la cola inferior, $H_0:\theta=0$ vs $H_1:\theta<0$, $H_0$ se debe rechazar con una significancia de $\alpha$ si $T^{*}\le -t_\alpha$.
+\item Prueba de dos colas, $H_0:\theta=0$ vs $H_1:\theta=0$, $H_0$ se debe rechazar con una significancia de $\alpha$ si $|T^{*}|\ge z_{\alpha/2}$ 
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Pruebas de 2 muestras}
+\section{Pruebas de 2 muestras}
+Con las pruebas de 2 muestras, nuestro interes será comparar un par de muestras que provienen de poblaciones con alguna caracteristica que las diferencian, y queremos investigar en si esa característica es significativa. Otra forma de verlo es con el caso particular en el que tenemos una poblacion a la cual le aplicamos cierto tratamiento, entonces queremos ver si el tratamiento tuvo un efecto \emph{positivo} o \emph{negativo}.
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Prueba de Mann-Whitney-Wilcoxon}
+\section{Prueba de Mann-Whitney-Wilcoxon}
+Esta prueba consiste en probar la hipotesis de que ambas muestras tienen la misma distribución, es decir $H_0:F(t)=G(t)$, sin embargo en ningún momento se especifica cual es la distribución de $F$ ó $G$, por lo tanto podemos cambiar la prueba a $H_0:\Delta =\mathbb{E}(X)-\mathbb{E}(Y)=0$.
+La forma de construir el estadístico es calcular los rangos conjuntos de $X$ y $Y$, con sus $N=m+n$, si $S_j$ denota los rangos de $Y$, entonces el estadístico se calcula como:
+$$W=\sum_{j=1}^{n}S_j$$
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Prueba de Mann-Whitney-Wilcoxon}
+Se pueden realizar 3 pruebas:
+\begin{itemize}
+\item Prueba de la cola superior, $H_0:\Delta=0$ vs $H_1:\Delta>0$, $H_0$ se debe rechazar con una significancia de $\alpha$ si $W\ge\omega_\alpha$.
+\item Prueba de la cola inferior, $H_0:\Delta=0$ vs $H_1:\Delta<0$, $H_0$ se debe rechazar con una significancia de $\alpha$ si $W\le n(m+n+1)-\omega_\alpha$.
+\item Prueba de dos colas, $H_0:\Delta=0$ vs $H_1:\Delta=0$, $H_0$ se debe rechazar con una significancia de $\alpha$ si $W\ge\omega_{\alpha/2}$ o $W\le n(m+n+1)-\omega_{\alpha/2}$.
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Prueba de Mann-Whitney-Wilcoxon}
+En el caso de que tengamos una gran cantidad de datos $N$, podemos calcular un estadístico alterno que se pueda comparar con una normal, eso gracias al hecho de que $\mathbb{E}_0(W)=\frac{n(m+n+1)}{2}$ y que $\text{Var}_0(W)=\frac{mn(m+n+1)}{12}$, por lo tanto podemos construir el estadístico:
+$$W^{*}=\frac{W-(n(m+n+1)/2)}{(mn(m+n+1)/12)^{1/2}}$$
+\end{frame}
+\begin{frame}
+\frametitle{Prueba de Mann-Whitney-Wilcoxon}
+De esta forma las pruebas se convierten en:
+\begin{itemize}
+\item Prueba de la cola superior, $H_0:\Delta=0$ vs $H_1:\Delta>0$, $H_0$ se debe rechazar con una significancia de $\alpha$ si $W^{*}\ge z_\alpha$.
+\item Prueba de la cola inferior, $H_0:\Delta=0$ vs $H_1:\Delta<0$, $H_0$ se debe rechazar con una significancia de $\alpha$ si $W^{*}\le -z_\alpha$
+\item Prueba de dos colas, $H_0:\Delta=0$ vs $H_1:\Delta=0$, $H_0$ se debe rechazar con una significancia de $\alpha$ si $|W^{*}|\ge z_{\alpha/2}$
+\end{itemize}
+\end{frame}
+
+\end{document}
+

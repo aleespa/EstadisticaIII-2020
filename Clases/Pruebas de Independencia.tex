@@ -71,4 +71,12 @@ $$ r_s^* = \sqrt{n-1}r_s$$
 Y las regiones de rechazo las podemos poner en terminos de la distribución normal.
 \end{frame}
 
+
+\begin{frame}
+\frametitle{Prueba de Hoeffding}
+\section{Prueba de Hoeffding}
+La prueba de Hoeffding, es otra prueba de independencia, tiene una mayor eficiencia para detectar la dependencia. Se calcula usando los rangos de las variables, y la comparación de los pares ordenados. Se define como $$D=\frac{Q-2(n-2)R+(n-2)(n-3)S}{n(n-1)(n-2)(n-3)(n-4)}$$
+Donde $Q=\sum_{i=1}^{n}(R_i-1)(R_i-2)(S_i-1)(S_i-2)$, $R=\sum_{i=1}^{n}(R_i-2)(S_i-2)c_i$, $S=\sum_{i=1}^{n}c_i(c_i-1)$, $c_i=\sum_{j=1}^{n}\phi(X_i,X_i)\phi(Y_i,Y_i)$, donde $\phi(a,b)$ es 1 si $a<b$ y 0 en otro caso.
+\end{frame}
+
 \end{document}
