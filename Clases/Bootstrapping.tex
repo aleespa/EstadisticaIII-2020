@@ -1,0 +1,84 @@
+\documentclass[aspectratio=169,spanish]{beamer}
+\usepackage[utf8]{inputenc}
+\title{Estadística III}
+\subtitle{Bootstrap}
+\author{Alejandro López Hernández}
+\institute{FES Acatlán - UNAM}
+\date{\today}
+\usetheme{Pittsburgh}
+\usecolortheme{beaver}
+
+\begin{document}
+
+\frame{\titlepage}
+
+
+
+\begin{frame}
+\frametitle{Índice}
+\tableofcontents
+\end{frame}
+
+\begin{frame}
+\frametitle{Bootstrap}
+\section{Bootstrap}
+El bootstrap es un método de remeustreo el cual nos proporciona información acerca de un funcional $T$ de una muestra $X_1,...,X_n$. Una forma en la que se podría tener mas información de $T$ es la situación cuando tenemos muchas muestras aleatorias, y podemos calcular $T$ para cada una de las muestras, de esta manera podrías conocer mas acerca de la distribución de $T$.
+\\
+Sin embargo, con el bootstrap no es necesario tener mas muestras ya que se realizan \textit{remuestreos} de la unica muestra con la que contamos. 
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Bootstrap}
+\begin{block}{Definición 1}
+Sea $X_1,...,X_n\sim F$ una muestra aleatoria y $T$ un funcional de $F$. La distribución bootrsap de $T$ está definida como 
+$$H_{{Boot}}(x) = \mathbb{P}_{\hat{F}_n}(T(X_1^{*},...X_n^{*})\le x)$$
+Donde $X_1^{*},...X_n^{*}$ es una muestra aleatoria proveniente de $\hat{F}_n$
+\end{block}
+\end{frame}
+
+\begin{frame}
+\frametitle{Bootstrap}
+La distribución de $H_{{Boot}}(x)$ se puede utilizar para estimar quantiles o la varianza de $T$. La forma de calcular la varianza bootsrap es
+\begin{block}{Varianza Bootsrap}
+\begin{enumerate}
+\item Extrae una muestra aleatoria de $X_1^{*},...X_n^{*}\sim\hat{F}_n$
+\item Calcula $T_n^{*} = T(X_1^{*},...X_n^{*})$
+\item Repite el paso 1 y 2 $B$ veces, para obtener $T_{n,1}^{*},...,T_{n,B}^{*}$
+\item Sea $$v_{\text{boot}}=\frac{1}{B}\sum_{b=1}^{B}\left(T_{n,b}^{*}-\frac{1}{B}\sum_{r=1}^{B}T_{n,r}^{*}\right)^2$$
+\end{enumerate}
+\end{block}
+\end{frame}
+
+\begin{frame}
+\frametitle{Intervalos de confianza}
+Podemos utilizar $v_{\text{boot}}$ para generar intervalos de confianza para $T$ con la siguiente formula $$T_n\pm z_{\alpha/2}\sqrt{v_{\text{boot}}}$$
+Sin embargo, este intervalo solo es bueno si $T_n$ tiene una distribución similar a la normal.
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Intervalos de confianza}
+Sea $\theta=T(F)$ y $\hat{\theta}_n=T(\hat{F}_n)$, y definimos $R_n=\hat{\theta}_n-\theta$, sea $H(x)$ la distribución de $R_n$. Entonces definimos nuestro intervalo $C^{*}_n =(a,b)$ con $$a=\hat{\theta}_n-H^{-1}(1-\frac{\alpha}{2})\quad\text{  y  }\quad b=\hat{\theta}_n-H^{-1}(\frac{\alpha}{2})$$
+Notemos que $\mathbb{P}(a<\theta<b)=1-\alpha$ por lo tanto $C^{*}_n$ es un intervalo de exactamente $1-\alpha$ de confianza. Sin embargo, $a$ y $b$ dependen de la distribución de $H$ pero se pueden estimar usando bootsrap. 
+\end{frame}
+
+\begin{frame}
+\frametitle{Intervalos de confianza}
+Podemos estimar la distribución $H$ como: 
+$$\hat{H}(r)=\frac{1}{B}\sum_{b=1}^{B} 1_{\{R_{n,b}^{*}\le r \}}$$
+Donde $R_{n,b}^{*}=\hat{\theta}_{n,b}^{*} - \hat{\theta}_n$, con la distribución empírica $\hat{H}(r)$ podemos estimar cuantiles de $R_n$, con $r_{\beta}^{*}=\inf\{x:\hat{H}(x)\geq \beta\}$, si $\theta_{\beta}^{*}$ es el cuantil $\beta$ de $\theta$ se puede probar que $r_{\beta}^{*}=\theta^{*}_{\beta}-\hat{\theta}$ por lo tanto 
+$$ \hat{a}=\hat{\theta}_n - \hat{H}^{-1}\left(1-\frac{\alpha}{2}\right)=\hat{\theta}_n-r_{1-\alpha/2}^{*}=2\hat{\theta}_n-\theta_{1-\alpha/2}^{*}$$
+$$\hat{b} = \hat{\theta}_n - \hat{H}^{-1}\left(\frac{\alpha}{2}\right)=\hat{\theta}_n-r_{\alpha/2}^{*}=2\hat{\theta}_n-\theta_{\alpha/2}^{*}$$
+\end{frame}
+
+\begin{frame}
+\frametitle{Intervalos de confianza}
+
+\begin{block}{Intervalos de confianza Bootsrap}
+El intervalo pivotal de $1-\alpha$\% confianza de Bootsrap es 
+$$C_n=\left(2\hat{\theta}_n-\hat{\theta}_{1-\alpha/2,B}^{*},2\hat{\theta}_n-\hat{\theta}_{\alpha/2,B}^{*}\right)$$
+\end{block}
+\end{frame}
+
+\end{document}
