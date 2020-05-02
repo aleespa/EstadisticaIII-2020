@@ -1,7 +1,7 @@
 \documentclass[aspectratio=169,spanish]{beamer}
 \usepackage[utf8]{inputenc}
 \title{Estadística III}
-\subtitle{Bootstrap}
+\subtitle{Bootstrap y Jacknife}
 \author{Alejandro López Hernández}
 \institute{FES Acatlán - UNAM}
 \date{\today}
@@ -78,6 +78,22 @@ $$\hat{b} = \hat{\theta}_n - \hat{H}^{-1}\left(\frac{\alpha}{2}\right)=\hat{\the
 \begin{block}{Intervalos de confianza Bootsrap}
 El intervalo pivotal de $1-\alpha$\% confianza de Bootsrap es 
 $$C_n=\left(2\hat{\theta}_n-\hat{\theta}_{1-\alpha/2,B}^{*},2\hat{\theta}_n-\hat{\theta}_{\alpha/2,B}^{*}\right)$$
+\end{block}
+\end{frame}
+
+\begin{frame}{Jacknife}
+\section{Jacknife}
+El jacknife es método para aproximar el sesgo y la varianza de los estimadores. Sea $T_n$ un estimador de cierta cantidad $\theta$, entonces definimos $\text{sesgo}(T_n)=\mathbb{E}(T_n)-\theta$ como el sesgo del estimador. Definimos $T_{(-i)}$ como el estadístico calculado excluyendo la í-ésima observación. El estimador del sesgo \textit{jacknife} se define como $$b_{jack}=(n-1)(\bar{T}_n-T_n)$$ Donde $\bar{T}=\frac{1}{n}\sum_{i=1}^{n}T_{(-i)}$ Derivado de este estimado de la varianza podemos corregir nuestro estadístico $T_n$ como $T_{jack}=T_n - b_{jack}$ y se puede probar que $\mathbb{E}(T_{jack})=O(\frac{1}{n^2})$
+\end{frame}
+
+\begin{frame}{Jacknife}
+Notemos que podemos reescribir $T_{jack}=\frac{1}{n}\sum_{i=1}^{n}\widetilde{T}_i$, donde $\widetilde{T}_i=nT_n-(n-1)T_{(-i)}$, estos valores son llamados \textit{psedo-valores}. Se utilizan para estimar la varianza de $T_n$ $$v_{jack}=\frac{\widetilde{s}^2}{n}$$ donde $$\widetilde{s}^2=\frac{\sum_{i=1}^{n}\left(\widetilde{T}_i-\frac{1}{n}\sum_{j=1}^{n}\widetilde{T}_j\right)^2}{n-1}$$
+Esta estimación bajo ciertas condiciones converge a la varianza real. 
+\end{frame}
+
+\begin{frame}{Jacknife}
+\begin{block}{Teorema}
+Sea $\mu=\mathbb{E}(X_i)$ y $\sigma^{2}=\text{Var}(X_i)<\infty$ y supongamos que $T_n=g(\bar{X}_n)$ donde $g$ es una función continua y diferenciable en $\mu$. Entonces $$\frac{T_n-g(\mu)}{\sigma^{2}_n}\rightarrow N(0,1)$$ donde  $\sigma^{2}_n=\frac{1}{n}(g'(\mu))^2\sigma^2$ y la estimación de la varianza jacknife es consistente, es decir $$\frac{v_{jack}}{\sigma^{2}_n}\rightarrow 1$$ 
 \end{block}
 \end{frame}
 
