@@ -1,0 +1,104 @@
+\documentclass[aspectratio=169,spanish]{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usefonttheme{professionalfonts}
+\title{Estadística III}
+\subtitle{Estimación de la Densidad}
+\author{Alejandro López Hernández}
+\institute{FES Acatlán - UNAM}
+\date{\today}
+\usetheme{Pittsburgh}
+\usecolortheme{beaver}
+
+\begin{document}
+
+\frame{\titlepage}
+
+\begin{frame}
+\frametitle{Índice}
+\tableofcontents
+\end{frame}
+
+\begin{frame}
+\section{Introducción}
+\frametitle{Introducción}
+El objetivo de la estimación no paramétrica de la función de densidad es hacer una cantidad mínima de supuestos. Supongamos que tenemos una muestra aleatoria $X_1,...,X_n\sim F$, entonces nuestro objetivo es estimar $f=F'$. Nuestra estimación la denotaremos como $\hat{f_n}$, y aparte de que dependa de $n$ también dependerá de un parámetro llamado \textit{ancho de banda}. 
+\end{frame}
+\begin{frame}
+\section{Histogramas}
+\frametitle{Histogramas}
+La forma más simple de estimar la densidad son los histogramas. La idea de los histogramas es aproximar $f$ mediante una función escalonada, el tamaño de los escalones se determinara por la cantidad de casos en cada uno de los intervalos que se haya definido para particionar el rango de las variables aleatorias. De forma mas precisa, supongamos que tenemos una variable aleatoria cuyo rango es el intervalo $[0,1]$, entonces lo dividimos en $m$ particiones iguales $$B_1=\left[0,\frac{1}{m}\right),\quad B_2=\left[\frac{1}{m},\frac{2}{m}\right),...,\quad B_m=\left[\frac{m-1}{m},1\right)$$
+De esta manera definimos el ancho de banda como $h=\frac{1}{m}$, los conjuntos $B_j$ son llamados \textit{bins}.
+\end{frame}
+
+\begin{frame}
+\frametitle{Histogramas}
+Sea $Y_j$ la cantidad de observaciones en $B_j$, y sea $p_j=\int_{B_j}f(u)du$ cantidad que podemos estimar como $\hat{p}_j=Y_j/n$, entonces nuestro histograma se define como:
+$$\hat{f}_n(x)=\sum_{j=1}^{m}\frac{\hat{p}_j}{h}1_{B_j}$$
+La motivación es la siguiente:
+$$\mathbb{E}(\hat{f}_n(x))=\frac{\mathbb{E}(\hat{p}_j)}{h}=\frac{\hat{p}_j}{h}=\frac{\int_{B_j}f(u)du}{h}\approx\frac{f(x)h}{h}=f(x)$$
+\end{frame}
+
+\begin{frame}
+\frametitle{Histogramas}
+\begin{block}{Teorema 1}
+Supongamos que $f'$ es absolutamente continua y que $\int (f(u))^2du<\infty$. Entonces $$ R(\hat{f}_n(x),f)=\frac{h^2}{12}\int (f(u))^2du+\frac{1}{nh}+o(h^2)+o\left(\frac{1}{n}\right)$$
+El valor optimo para el ancho de banda es $$h^{*}=\frac{1}{n^{1/3}}\left(\frac{6}{\int (f(u))^2du}\right)^{1/3}$$, si escogemos ese ancho de banda entonces $$R(\hat{f}_n(x),f)\sim \frac{(3/4)^{2/3}(\int (f(u))^2du)^{1/3}}{n^{2/3}}$$
+\end{block}
+\end{frame}
+
+\begin{frame}
+\frametitle{Histogramas}
+La métrica para medir la calidad de nuestra estimación $\hat{f}_n$, sera con la error que cometemos al hacer la estimación con un ancho de banda de $h$, $$L(h)=\int (\hat{f}_n(u)-f(u))^2du$$ 
+Derivado de esta cantidad 
+\begin{block}{Definición}
+Se define el estimar de \textbf{riesgo de validación cruzada} como $$\hat{J}(h)=\int (\hat{f}_n(x))^2dx - \frac{2}{n}\sum_{i=1}^{n}\hat{f}_{-i}(X_i)$$ donde $\hat{f}_{-i}$ es la estimación de la densidad sin considerar la i-ésima observación.
+\end{block}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Histogramas}
+Para la estimación de histogramas tenemos que 
+\begin{block}{Teorema 2}
+$$\hat{J}(h)=\frac{2}{h(n-1)}-\frac{n+1}{h(n-1)}\sum_{j=1}^{m}\hat{p_j}^2$$
+\end{block}
+\end{frame}
+
+\begin{frame}
+\frametitle{Estimación con Kernel}
+\section{Estimación con Kernel}
+Una de las desventajas de la estimación mediante histogramas es que no es una función suave y que la velocidad de convergencia. La estimación con Kernel soluciona estos 2 problemas y resulta ser la estimación que mas rápido converge a la densidad real. Esta estimación propone una suma de funciones \textbf{Kernel}, una Kernel es una función suave mayor a 0 tal que 
+$$\int	K(x)dx=1,\quad \int xK(x)dx=1,\quad \int x^2K(x)dx>0$$
+\end{frame}
+
+\begin{frame}
+\frametitle{Estimación con Kernel}
+Algunos ejemplos de funciones kernel son:
+\begin{itemize}
+\item $K(x)=\frac{1}{2}1_{|x| \le 1}$
+\item $K(x)=\frac{1}{\sqrt{2\pi}}e^{x^2/2}$
+\item $K(x)=\frac{3}{4}(1-x^2)1_{|x| \le 1}$
+\item $K(x)=\frac{70}{81}(1-|x|^3)^31_{|x| \le 1}$
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Estimación con Kernel}
+\begin{block}{Definición}
+Dado un kernel $K$ y un valor positivo $h$, a estimación por kernel de la densidad esta definida como $$\hat{f}_n(x)=\frac{1}{n}\sum_{i=1}^{n}\frac{1}{h}K\left(\frac{x-X_i}{h}\right)$$
+\end{block}
+\end{frame}
+\begin{frame}
+\frametitle{Estimación con Kernel}
+Tenemos los siguientes 2 resultados relevantes 
+\begin{block}{Teorema 3}
+Supongamos que $f$ es continua en $x$ y que $h_n\rightarrow0$ y $nh_n\rightarrow \infty$ cuando $n\rightarrow \infty$. Entonces $\hat{f}_n(x)\rightarrow f$ en probabilidad.
+\end{block}
+\begin{block}{Teorema 4}
+Para cualquier $h>0$ 
+$$\hat{J}(h)=\frac{1}{hn^2}\sum_{i=1}^{n}\sum_{j=1}^{n}K^{*}\left(\frac{X_i-X_j}{h}\right)+\frac{2}{nh}K(0)+O\left(\frac{1}{n^2}\right)$$
+Donde $K^{*}(x)=K^{(2)}(x)-2K(x)$ y $K^{(2)}(z)=\int K(z-y)K(y)dy$
+\end{block}
+\end{frame}
+\end{document}
