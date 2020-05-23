@@ -1,0 +1,4 @@
+\beamer@sectionintoc {1}{Introducción}{3}{0}{1}
+\beamer@sectionintoc {2}{1-Spline}{4}{0}{2}
+\beamer@sectionintoc {3}{2-Spline}{10}{0}{3}
+\beamer@sectionintoc {4}{p-Spline}{12}{0}{4}

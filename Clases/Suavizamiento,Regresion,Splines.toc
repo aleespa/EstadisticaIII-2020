@@ -1,0 +1,5 @@
+\beamer@sectionintoc {1}{Introducción}{3}{0}{1}
+\beamer@sectionintoc {2}{Regresores Lineales}{7}{0}{2}
+\beamer@sectionintoc {3}{Validación cruzada}{16}{0}{3}
+\beamer@sectionintoc {4}{Estimación de Kernel Nadaraya-Watson}{19}{0}{4}
+\beamer@sectionintoc {5}{Estimación de $\sigma ^{2}(x)$}{25}{0}{5}
